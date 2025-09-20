@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Theme from "@/theme";
+import { ClerkProvider } from "@clerk/nextjs";
+import { connect } from "http2";
+import { connectMongoDB } from "@/config/mongodb";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -19,11 +22,12 @@ export const metadata: Metadata = {
   description: "Streamline your tasks and projects with our intuitive work management app",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  await connectMongoDB();
   return (
     <html lang="en">
       <body
