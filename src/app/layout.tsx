@@ -29,14 +29,16 @@ export default async function RootLayout({
 }>) {
   await connectMongoDB();
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Theme>
-          {children}
-        </Theme>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <Theme>
+            {children}
+          </Theme>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
