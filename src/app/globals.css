@@ -11,3 +11,25 @@
   box-sizing: border-box;
   font-weight: 500;
 }
+html {
+  background-color: #EAEEF7;
+}
+
+.cl-cardBox  {
+  box-shadow: none !important;
+}
+
+.cl-formButtonPrimary {
+  background-color: #1051a2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #083f82;
+  }
+}
